@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Registration-Step</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Corrected image tag -->
+            <img src="{% static 'media/step.png' %}" alt="header-image" class="cld-responsive">
+
+            <!-- Registration form -->
+            <form method="post">
+                {% csrf_token %}
+                <h1>Registration Form</h1>
+                <div>
+                    {{ form.emp_id.label_tag }}
+                    {{ form.emp_id }}
+                </div>
+                <div>
+                    {{ form.emp_name.label_tag }}
+                    {{ form.emp_name }}
+                </div>
+                <div>
+                    {{ form.emp_email.label_tag }}
+                    {{ form.emp_email }}
+                </div>
+                <div>
+                    {{ form.emp_phn_number.label_tag }}
+                    {{ form.emp_phn_number }}
+                </div>
+                <div>
+                    {{ form.emp_department.label_tag }}
+                    {{ form.emp_department }}
+                </div>
+                <div>
+                    {{ form.emp_role.label_tag }}
+                    {{ form.emp_role }}
+                </div>
+                <div>
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                </div>
+                <div>
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                </div>
+                <!-- Proper button without wrapping anchor tag -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
